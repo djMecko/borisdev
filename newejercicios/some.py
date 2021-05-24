@@ -79,3 +79,87 @@ panfresco = 3.49
 panpasado = (panfresco - (panfresco*0.6))
 coste=((barrasf*panfresco) + (barras*panpasado))
 print("el coste total es " , round(coste,2))
+
+
+# ejercicios de cadenas
+# ejercicio 1
+a = input("ingrese su nombre")
+b = int(input("ingrese un numero entero"))
+print((a + "\n") * (b))
+
+# ejercicio 2
+
+s = input("igrese su nombres y apellidos")
+print(s.title())
+print(s.lower())
+print(s.upper())
+
+# ejercicio 3
+
+x = input("ingrese su nombre")
+print("el nombre ingresado es" + (x.upper()) + "y tiene" + str(len(x)) + "letras" )
+
+# ejercicio 4
+
+x = input("ingrese el numero de telefono con la siguiente forma +xx-xxxxxxxxx-xx")
+print("el numero ingresado es" , x[4,:-3])
+
+# ejercicio 5
+
+v = input("ingrese una frase")
+print(v[::-1])
+
+# ejercicio 6
+
+f = input("Introduce una frase: ")
+vocal = input("Introduce una vocal en minúscula:  ")
+print(f.replace(vocal, vocal.upper()))
+
+# ejercicio 7
+
+email = input("Introduce tu correo electrónico: ")
+print(email[:email.find('@')] + '@ceu.es')
+
+# ejercicio 8
+precio = input("Introduce el precio del producto con dos decimales:  ")
+print(precio[:precio.find('.')], 'euros y', precio[precio.find('.')+1:], 'céntimos.')
+
+#ejercicio 9 
+
+fecha = input("Introduce la fecha de tu nacimiento en formato dd/mm/aaaa: ")
+print('Día', fecha[:2])
+print('Mes', fecha[3:5])
+print('Año', fecha[6:])
+
+#ejercicio 10
+ 
+cesta = input('Introduce los productos de la cesta de la compra separados por comas: ')
+print(cesta.replace(',', '\n'))
+
+# ejercicio 11
+
+producto = input('Introduce el nombre del producto: ')
+precio = float(input('Introducde el precio unitario: '))
+unidades = int(input('Introduce el número de unidades: '))
+print('{producto}: {unidades:3d} unidades x {precio:9.2f}€ = {total:11.2f}€'.format(producto = producto, unidades = unidades, precio = precio, total = unidades * precio))
+
+
+# ejercicios de prueva
+
+def doble(n):
+       return 2*n
+print(doble(4))
+
+def triple(n):
+    return 3*n
+print(triple(5))
+
+s =[23,58,7,95,7,5]
+
+def restar(s):
+    q = 1
+    for r in s:
+        q *= r
+    return q
+print(restar(s))
+
