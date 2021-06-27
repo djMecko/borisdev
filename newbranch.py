@@ -70,3 +70,8 @@ while numero <= 10:
         print(numero)
     numero=numero+1
 
+def double_list(lista)
+    return [2*x for x in lista]
+
+def mutiply_list(lista, n)
+    return [n*x for x in lista]
