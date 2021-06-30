@@ -1,14 +1,28 @@
 # Palindromo es cuando una palabra se lee igual de izquiera a derecha y viceversa
 def isPalindromo(word):
-	return
+	word1 = list(word)
+	word2 = list(word)
+	word2.reverse()
+	return word1 == word2
 
 # Retorna true si todos los numeros que contiene son primos
-def fullPrimes(list):
-	return
+def isprime(n):
+	if n == 1:
+		return True
+	for i in range(2,n/2):
+		if n % i == 0:
+			return False
+	return True
+	
+def fullPrimes(l):
+	for number in l:
+		if not isprime(number):
+			return False
+	return True
 
 # Retorna una lista de booleanos con True en todos los valores menores a un numero dado
-def lessto(list, number):
-	return
+def lessto(lista, number):	
+	return [x < number for x in lista]
 
 # Calcula el score final de un juego con las siguientes reglas:
 # La lista tiene puntajes positivos y negativos
@@ -24,13 +38,21 @@ def lessto(list, number):
 # Un cambio de signo entre 5 y -10, debemos restar 1 al resultado final
 # Un cambio de signo entre -10 y +15, debemos agregar 2 al resultado final
 # resultado final 10 -1 +2 = 11
-def finalscore(list)
-	return
+def finalscore(lista):
+	suma = sum(lista)
+	isPositive = lista[0] > 0
+	for item in lista:
+		if item < 0 and isPositive:
+			suma -= 1
+			isPositive = False
+		if item >0 and not isPositive:
+			suma += 2
+			isPositive = True
+	return suma
 
 assert(isPalindromo("uwu") == True)
 assert(isPalindromo("casa") == False)
 assert(isPalindromo("kook") == True)
-
 
 assert(fullPrimes([1,5,7]) == True)
 assert(fullPrimes([1,5,7,9]) == False)
