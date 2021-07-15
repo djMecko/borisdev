@@ -10,8 +10,23 @@ def areEqual(mat1, mat2):
 
 # Return true if all elements of matrix is 0
 def equaltozero(mat1):
-    return
+    for row in mat1:
+        for item in row:
+            if item != 0:
+                return False
+    return True
 
 # Return true if all values of matrix are equals, in other case return false
 def allElementsAreEquals(mat1):
-    return 
+    firstItem = mat1[0][0]
+    for row in mat1:
+        for item in row:
+            if item != firstItem:
+                return False
+    return True
+
+matrixA = [[1,1],[1,1]]
+matrixB = [[0,0],[0,0]]
+
+print(equaltozero(matrixB))
+print(allElementsAreEquals(matrixA))
