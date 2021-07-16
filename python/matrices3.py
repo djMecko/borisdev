@@ -6,15 +6,33 @@ def multiplyByScalar(mat, number):
 # Sum all elements of matrix and return this result
 # [[1,2],[1,3]] => 7
 def sumAllElements(mat):
-	return
+	counter = 0
+	for row in mat:
+		counter += sum(row)
+	return counter
 
 # Sum the diagonal of matrix
-# [[1,2],[1,3]] => 1 + 3 = 7
+# [[1,2],[1,3]] => 1 + 3 = 4
 def sumDiagonal(mat):
-	return
+	counter = 0
+	for index, item in enumerate(mat):
+		counter += mat[index][index]
+	return counter
 
 # Find an element in the matrix
 # [[1,2],[1,3]], 3) => True
 # [[1,2],[1,3]], 4) => False
 def findElement(mat, number):
-	return
+	for row in mat:
+		for item in row:
+			if item == number:
+				return True
+	return False
+
+print(sumAllElements([[1,2],[1,3]]))
+
+#print(sumDiagonal([[1,2],[1,3]]))
+
+#print(findElement([[1,2],[1,3]], 4))
+#print(findElement([[1,2],[1,3]], 3))
+
